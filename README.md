@@ -9,7 +9,7 @@ npm install simple-node-decorators --save
 ```typescript
 import { Request, Response } from 'express';
 import { z } from 'zod';
-import {
+const {
   Controller,
   AuthGuard,
   Get,
@@ -22,7 +22,7 @@ import {
   Query,
   Body,
   RoleGuard,
-} from '@softwarehutpl/express-zod-decorators';
+} = require('@softwarehutpl/express-zod-decorators');
 
 const ZodUser = z.object({
   id: z.string().optional(),

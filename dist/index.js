@@ -1,10 +1,10 @@
-const xe = (l) => (f, h, d) => {
-  const w = d.value;
-  d.value = (...y) => {
-    const [p, b] = y, m = p.headers;
-    if (m && m.authorization === `Bearer ${l}`)
+const Ae = (u) => (f, d, h) => {
+  const w = h.value;
+  h.value = (...y) => {
+    const [v, m] = y, b = v.headers;
+    if (b && b.authorization === `Bearer ${u}`)
       return w.apply(void 0, y);
-    b.status(401).json({ error: "Not Authorized" });
+    m.status(401).json({ error: "Not Authorized" });
   };
 };
 var te = typeof globalThis < "u" ? globalThis : typeof window < "u" ? window : typeof global < "u" ? global : typeof self < "u" ? self : {};
@@ -23,129 +23,129 @@ See the Apache Version 2.0 License for specific language governing permissions
 and limitations under the License.
 ***************************************************************************** */
 var ne;
-(function(l) {
+(function(u) {
   (function(f) {
-    var h = typeof te == "object" ? te : typeof self == "object" ? self : typeof this == "object" ? this : Function("return this;")(), d = w(l);
-    typeof h.Reflect > "u" ? h.Reflect = l : d = w(h.Reflect, d), f(d);
-    function w(y, p) {
-      return function(b, m) {
-        typeof y[b] != "function" && Object.defineProperty(y, b, { configurable: !0, writable: !0, value: m }), p && p(b, m);
+    var d = typeof te == "object" ? te : typeof self == "object" ? self : typeof this == "object" ? this : Function("return this;")(), h = w(u);
+    typeof d.Reflect > "u" ? d.Reflect = u : h = w(d.Reflect, h), f(h);
+    function w(y, v) {
+      return function(m, b) {
+        typeof y[m] != "function" && Object.defineProperty(y, m, { configurable: !0, writable: !0, value: b }), v && v(m, b);
       };
     }
   })(function(f) {
-    var h = Object.prototype.hasOwnProperty, d = typeof Symbol == "function", w = d && typeof Symbol.toPrimitive < "u" ? Symbol.toPrimitive : "@@toPrimitive", y = d && typeof Symbol.iterator < "u" ? Symbol.iterator : "@@iterator", p = typeof Object.create == "function", b = { __proto__: [] } instanceof Array, m = !p && !b, O = {
+    var d = Object.prototype.hasOwnProperty, h = typeof Symbol == "function", w = h && typeof Symbol.toPrimitive < "u" ? Symbol.toPrimitive : "@@toPrimitive", y = h && typeof Symbol.iterator < "u" ? Symbol.iterator : "@@iterator", v = typeof Object.create == "function", m = { __proto__: [] } instanceof Array, b = !v && !m, T = {
       // create an object in dictionary mode (a.k.a. "slow" mode in v8)
-      create: p ? function() {
-        return B(/* @__PURE__ */ Object.create(null));
-      } : b ? function() {
-        return B({ __proto__: null });
+      create: v ? function() {
+        return L(/* @__PURE__ */ Object.create(null));
+      } : m ? function() {
+        return L({ __proto__: null });
       } : function() {
-        return B({});
+        return L({});
       },
-      has: m ? function(e, t) {
-        return h.call(e, t);
+      has: b ? function(e, t) {
+        return d.call(e, t);
       } : function(e, t) {
         return t in e;
       },
-      get: m ? function(e, t) {
-        return h.call(e, t) ? e[t] : void 0;
+      get: b ? function(e, t) {
+        return d.call(e, t) ? e[t] : void 0;
       } : function(e, t) {
         return e[t];
       }
-    }, A = Object.getPrototypeOf(Function), q = typeof process == "object" && process.env && process.env.REFLECT_METADATA_USE_MAP_POLYFILL === "true", S = !q && typeof Map == "function" && typeof Map.prototype.entries == "function" ? Map : ge(), I = !q && typeof Set == "function" && typeof Set.prototype.entries == "function" ? Set : Te(), D = !q && typeof WeakMap == "function" ? WeakMap : Oe(), k = new D();
-    function R(e, t, n, r) {
-      if (v(n)) {
+    }, A = Object.getPrototypeOf(Function), I = typeof process == "object" && process.env && process.env.REFLECT_METADATA_USE_MAP_POLYFILL === "true", S = !I && typeof Map == "function" && typeof Map.prototype.entries == "function" ? Map : Ee(), j = !I && typeof Set == "function" && typeof Set.prototype.entries == "function" ? Set : Oe(), U = !I && typeof WeakMap == "function" ? WeakMap : Re(), k = new U();
+    function O(e, t, n, r) {
+      if (p(n)) {
         if (!J(e))
           throw new TypeError();
         if (!X(t))
           throw new TypeError();
-        return le(e, t);
+        return he(e, t);
       } else {
         if (!J(e))
           throw new TypeError();
         if (!_(t))
           throw new TypeError();
-        if (!_(r) && !v(r) && !j(r))
+        if (!_(r) && !p(r) && !P(r))
           throw new TypeError();
-        return j(r) && (r = void 0), n = T(n), he(e, t, n, r);
+        return P(r) && (r = void 0), n = E(n), ye(e, t, n, r);
       }
     }
-    f("decorate", R);
-    function E(e, t) {
+    f("decorate", O);
+    function R(e, t) {
       function n(r, a) {
         if (!_(r))
           throw new TypeError();
-        if (!v(a) && !we(a))
+        if (!p(a) && !me(a))
           throw new TypeError();
-        z(e, t, r, a);
+        H(e, t, r, a);
       }
       return n;
     }
-    f("metadata", E);
+    f("metadata", R);
     function F(e, t, n, r) {
       if (!_(n))
         throw new TypeError();
-      return v(r) || (r = T(r)), z(e, t, n, r);
+      return p(r) || (r = E(r)), H(e, t, n, r);
     }
     f("defineMetadata", F);
-    function ae(e, t, n) {
-      if (!_(t))
-        throw new TypeError();
-      return v(n) || (n = T(n)), N(e, t, n);
-    }
-    f("hasMetadata", ae);
-    function oe(e, t, n) {
-      if (!_(t))
-        throw new TypeError();
-      return v(n) || (n = T(n)), W(e, t, n);
-    }
-    f("hasOwnMetadata", oe);
     function ie(e, t, n) {
       if (!_(t))
         throw new TypeError();
-      return v(n) || (n = T(n)), $(e, t, n);
+      return p(n) || (n = E(n)), V(e, t, n);
     }
-    f("getMetadata", ie);
+    f("hasMetadata", ie);
     function ue(e, t, n) {
       if (!_(t))
         throw new TypeError();
-      return v(n) || (n = T(n)), H(e, t, n);
+      return p(n) || (n = E(n)), W(e, t, n);
     }
-    f("getOwnMetadata", ue);
-    function fe(e, t) {
-      if (!_(e))
-        throw new TypeError();
-      return v(t) || (t = T(t)), Q(e, t);
-    }
-    f("getMetadataKeys", fe);
-    function se(e, t) {
-      if (!_(e))
-        throw new TypeError();
-      return v(t) || (t = T(t)), Y(e, t);
-    }
-    f("getOwnMetadataKeys", se);
-    function ce(e, t, n) {
+    f("hasOwnMetadata", ue);
+    function se(e, t, n) {
       if (!_(t))
         throw new TypeError();
-      v(n) || (n = T(n));
-      var r = U(
+      return p(n) || (n = E(n)), N(e, t, n);
+    }
+    f("getMetadata", se);
+    function fe(e, t, n) {
+      if (!_(t))
+        throw new TypeError();
+      return p(n) || (n = E(n)), $(e, t, n);
+    }
+    f("getOwnMetadata", fe);
+    function ce(e, t) {
+      if (!_(e))
+        throw new TypeError();
+      return p(t) || (t = E(t)), Q(e, t);
+    }
+    f("getMetadataKeys", ce);
+    function le(e, t) {
+      if (!_(e))
+        throw new TypeError();
+      return p(t) || (t = E(t)), Y(e, t);
+    }
+    f("getOwnMetadataKeys", le);
+    function de(e, t, n) {
+      if (!_(t))
+        throw new TypeError();
+      p(n) || (n = E(n));
+      var r = C(
         t,
         n,
         /*Create*/
         !1
       );
-      if (v(r) || !r.delete(e))
+      if (p(r) || !r.delete(e))
         return !1;
       if (r.size > 0)
         return !0;
       var a = k.get(t);
       return a.delete(n), a.size > 0 || k.delete(t), !0;
     }
-    f("deleteMetadata", ce);
-    function le(e, t) {
+    f("deleteMetadata", de);
+    function he(e, t) {
       for (var n = e.length - 1; n >= 0; --n) {
         var r = e[n], a = r(t);
-        if (!v(a) && !j(a)) {
+        if (!p(a) && !P(a)) {
           if (!X(a))
             throw new TypeError();
           t = a;
@@ -153,10 +153,10 @@ var ne;
       }
       return t;
     }
-    function he(e, t, n, r) {
+    function ye(e, t, n, r) {
       for (var a = e.length - 1; a >= 0; --a) {
         var M = e[a], i = M(t, n, r);
-        if (!v(i) && !j(i)) {
+        if (!p(i) && !P(i)) {
           if (!_(i))
             throw new TypeError();
           r = i;
@@ -164,57 +164,57 @@ var ne;
       }
       return r;
     }
-    function U(e, t, n) {
+    function C(e, t, n) {
       var r = k.get(e);
-      if (v(r)) {
+      if (p(r)) {
         if (!n)
           return;
         r = new S(), k.set(e, r);
       }
       var a = r.get(t);
-      if (v(a)) {
+      if (p(a)) {
         if (!n)
           return;
         a = new S(), r.set(t, a);
       }
       return a;
     }
-    function N(e, t, n) {
+    function V(e, t, n) {
       var r = W(e, t, n);
       if (r)
         return !0;
-      var a = L(t);
-      return j(a) ? !1 : N(e, a, n);
+      var a = z(t);
+      return P(a) ? !1 : V(e, a, n);
     }
     function W(e, t, n) {
-      var r = U(
+      var r = C(
         t,
         n,
         /*Create*/
         !1
       );
-      return v(r) ? !1 : pe(r.has(e));
+      return p(r) ? !1 : we(r.has(e));
     }
-    function $(e, t, n) {
+    function N(e, t, n) {
       var r = W(e, t, n);
       if (r)
-        return H(e, t, n);
-      var a = L(t);
-      if (!j(a))
-        return $(e, a, n);
+        return $(e, t, n);
+      var a = z(t);
+      if (!P(a))
+        return N(e, a, n);
     }
-    function H(e, t, n) {
-      var r = U(
+    function $(e, t, n) {
+      var r = C(
         t,
         n,
         /*Create*/
         !1
       );
-      if (!v(r))
+      if (!p(r))
         return r.get(e);
     }
-    function z(e, t, n, r) {
-      var a = U(
+    function H(e, t, n, r) {
+      var a = C(
         n,
         r,
         /*Create*/
@@ -223,7 +223,7 @@ var ne;
       a.set(e, t);
     }
     function Q(e, t) {
-      var n = Y(e, t), r = L(e);
+      var n = Y(e, t), r = z(e);
       if (r === null)
         return n;
       var a = Q(r, t);
@@ -231,37 +231,37 @@ var ne;
         return n;
       if (n.length <= 0)
         return a;
-      for (var M = new I(), i = [], u = 0, o = n; u < o.length; u++) {
-        var s = o[u], c = M.has(s);
-        c || (M.add(s), i.push(s));
+      for (var M = new j(), i = [], s = 0, o = n; s < o.length; s++) {
+        var c = o[s], l = M.has(c);
+        l || (M.add(c), i.push(c));
       }
       for (var x = 0, ee = a; x < ee.length; x++) {
-        var s = ee[x], c = M.has(s);
-        c || (M.add(s), i.push(s));
+        var c = ee[x], l = M.has(c);
+        l || (M.add(c), i.push(c));
       }
       return i;
     }
     function Y(e, t) {
-      var n = [], r = U(
+      var n = [], r = C(
         e,
         t,
         /*Create*/
         !1
       );
-      if (v(r))
+      if (p(r))
         return n;
-      for (var a = r.keys(), M = Me(a), i = 0; ; ) {
-        var u = be(M);
-        if (!u)
+      for (var a = r.keys(), M = be(a), i = 0; ; ) {
+        var s = ge(M);
+        if (!s)
           return n.length = i, n;
-        var o = me(u);
+        var o = ke(s);
         try {
           n[i] = o;
-        } catch (s) {
+        } catch (c) {
           try {
-            ke(M);
+            Te(M);
           } finally {
-            throw s;
+            throw c;
           }
         }
         i++;
@@ -287,19 +287,19 @@ var ne;
           return 6;
       }
     }
-    function v(e) {
+    function p(e) {
       return e === void 0;
     }
-    function j(e) {
+    function P(e) {
       return e === null;
     }
-    function de(e) {
+    function ve(e) {
       return typeof e == "symbol";
     }
     function _(e) {
       return typeof e == "object" ? e !== null : typeof e == "function";
     }
-    function ye(e, t) {
+    function pe(e, t) {
       switch (Z(e)) {
         case 0:
           return e;
@@ -321,31 +321,31 @@ var ne;
           throw new TypeError();
         return a;
       }
-      return ve(e, n === "default" ? "number" : n);
+      return _e(e, n === "default" ? "number" : n);
     }
-    function ve(e, t) {
+    function _e(e, t) {
       if (t === "string") {
         var n = e.toString;
-        if (P(n)) {
+        if (q(n)) {
           var r = n.call(e);
           if (!_(r))
             return r;
         }
         var a = e.valueOf;
-        if (P(a)) {
+        if (q(a)) {
           var r = a.call(e);
           if (!_(r))
             return r;
         }
       } else {
         var a = e.valueOf;
-        if (P(a)) {
+        if (q(a)) {
           var r = a.call(e);
           if (!_(r))
             return r;
         }
         var M = e.toString;
-        if (P(M)) {
+        if (q(M)) {
           var r = M.call(e);
           if (!_(r))
             return r;
@@ -353,30 +353,30 @@ var ne;
       }
       throw new TypeError();
     }
-    function pe(e) {
+    function we(e) {
       return !!e;
     }
-    function _e(e) {
+    function Me(e) {
       return "" + e;
     }
-    function T(e) {
-      var t = ye(
+    function E(e) {
+      var t = pe(
         e,
         3
         /* String */
       );
-      return de(t) ? t : _e(t);
+      return ve(t) ? t : Me(t);
     }
     function J(e) {
       return Array.isArray ? Array.isArray(e) : e instanceof Object ? e instanceof Array : Object.prototype.toString.call(e) === "[object Array]";
     }
-    function P(e) {
+    function q(e) {
       return typeof e == "function";
     }
     function X(e) {
       return typeof e == "function";
     }
-    function we(e) {
+    function me(e) {
       switch (Z(e)) {
         case 3:
           return !0;
@@ -389,32 +389,32 @@ var ne;
     function K(e, t) {
       var n = e[t];
       if (n != null) {
-        if (!P(n))
+        if (!q(n))
           throw new TypeError();
         return n;
       }
     }
-    function Me(e) {
+    function be(e) {
       var t = K(e, y);
-      if (!P(t))
+      if (!q(t))
         throw new TypeError();
       var n = t.call(e);
       if (!_(n))
         throw new TypeError();
       return n;
     }
-    function me(e) {
+    function ke(e) {
       return e.value;
     }
-    function be(e) {
+    function ge(e) {
       var t = e.next();
       return t.done ? !1 : t;
     }
-    function ke(e) {
+    function Te(e) {
       var t = e.return;
       t && t.call(e);
     }
-    function L(e) {
+    function z(e) {
       var t = Object.getPrototypeOf(e);
       if (typeof e != "function" || e === A || t !== A)
         return t;
@@ -424,28 +424,28 @@ var ne;
       var a = r.constructor;
       return typeof a != "function" || a === e ? t : a;
     }
-    function ge() {
+    function Ee() {
       var e = {}, t = [], n = (
         /** @class */
         function() {
-          function i(u, o, s) {
-            this._index = 0, this._keys = u, this._values = o, this._selector = s;
+          function i(s, o, c) {
+            this._index = 0, this._keys = s, this._values = o, this._selector = c;
           }
           return i.prototype["@@iterator"] = function() {
             return this;
           }, i.prototype[y] = function() {
             return this;
           }, i.prototype.next = function() {
-            var u = this._index;
-            if (u >= 0 && u < this._keys.length) {
-              var o = this._selector(this._keys[u], this._values[u]);
-              return u + 1 >= this._keys.length ? (this._index = -1, this._keys = t, this._values = t) : this._index++, { value: o, done: !1 };
+            var s = this._index;
+            if (s >= 0 && s < this._keys.length) {
+              var o = this._selector(this._keys[s], this._values[s]);
+              return s + 1 >= this._keys.length ? (this._index = -1, this._keys = t, this._values = t) : this._index++, { value: o, done: !1 };
             }
             return { value: void 0, done: !0 };
-          }, i.prototype.throw = function(u) {
-            throw this._index >= 0 && (this._index = -1, this._keys = t, this._values = t), u;
-          }, i.prototype.return = function(u) {
-            return this._index >= 0 && (this._index = -1, this._keys = t, this._values = t), { value: u, done: !0 };
+          }, i.prototype.throw = function(s) {
+            throw this._index >= 0 && (this._index = -1, this._keys = t, this._values = t), s;
+          }, i.prototype.return = function(s) {
+            return this._index >= 0 && (this._index = -1, this._keys = t, this._values = t), { value: s, done: !0 };
           }, i;
         }()
       );
@@ -461,36 +461,36 @@ var ne;
             },
             enumerable: !0,
             configurable: !0
-          }), i.prototype.has = function(u) {
+          }), i.prototype.has = function(s) {
             return this._find(
-              u,
+              s,
               /*insert*/
               !1
             ) >= 0;
-          }, i.prototype.get = function(u) {
+          }, i.prototype.get = function(s) {
             var o = this._find(
-              u,
+              s,
               /*insert*/
               !1
             );
             return o >= 0 ? this._values[o] : void 0;
-          }, i.prototype.set = function(u, o) {
-            var s = this._find(
-              u,
+          }, i.prototype.set = function(s, o) {
+            var c = this._find(
+              s,
               /*insert*/
               !0
             );
-            return this._values[s] = o, this;
-          }, i.prototype.delete = function(u) {
+            return this._values[c] = o, this;
+          }, i.prototype.delete = function(s) {
             var o = this._find(
-              u,
+              s,
               /*insert*/
               !1
             );
             if (o >= 0) {
-              for (var s = this._keys.length, c = o + 1; c < s; c++)
-                this._keys[c - 1] = this._keys[c], this._values[c - 1] = this._values[c];
-              return this._keys.length--, this._values.length--, u === this._cacheKey && (this._cacheKey = e, this._cacheIndex = -2), !0;
+              for (var c = this._keys.length, l = o + 1; l < c; l++)
+                this._keys[l - 1] = this._keys[l], this._values[l - 1] = this._values[l];
+              return this._keys.length--, this._values.length--, s === this._cacheKey && (this._cacheKey = e, this._cacheIndex = -2), !0;
             }
             return !1;
           }, i.prototype.clear = function() {
@@ -505,22 +505,22 @@ var ne;
             return this.entries();
           }, i.prototype[y] = function() {
             return this.entries();
-          }, i.prototype._find = function(u, o) {
-            return this._cacheKey !== u && (this._cacheIndex = this._keys.indexOf(this._cacheKey = u)), this._cacheIndex < 0 && o && (this._cacheIndex = this._keys.length, this._keys.push(u), this._values.push(void 0)), this._cacheIndex;
+          }, i.prototype._find = function(s, o) {
+            return this._cacheKey !== s && (this._cacheIndex = this._keys.indexOf(this._cacheKey = s)), this._cacheIndex < 0 && o && (this._cacheIndex = this._keys.length, this._keys.push(s), this._values.push(void 0)), this._cacheIndex;
           }, i;
         }()
       );
-      function r(i, u) {
+      function r(i, s) {
         return i;
       }
-      function a(i, u) {
-        return u;
+      function a(i, s) {
+        return s;
       }
-      function M(i, u) {
-        return [i, u];
+      function M(i, s) {
+        return [i, s];
       }
     }
-    function Te() {
+    function Oe() {
       return (
         /** @class */
         function() {
@@ -555,42 +555,42 @@ var ne;
         }()
       );
     }
-    function Oe() {
-      var e = 16, t = O.create(), n = r();
+    function Re() {
+      var e = 16, t = T.create(), n = r();
       return (
         /** @class */
         function() {
           function o() {
             this._key = r();
           }
-          return o.prototype.has = function(s) {
-            var c = a(
-              s,
+          return o.prototype.has = function(c) {
+            var l = a(
+              c,
               /*create*/
               !1
             );
-            return c !== void 0 ? O.has(c, this._key) : !1;
-          }, o.prototype.get = function(s) {
-            var c = a(
-              s,
+            return l !== void 0 ? T.has(l, this._key) : !1;
+          }, o.prototype.get = function(c) {
+            var l = a(
+              c,
               /*create*/
               !1
             );
-            return c !== void 0 ? O.get(c, this._key) : void 0;
-          }, o.prototype.set = function(s, c) {
+            return l !== void 0 ? T.get(l, this._key) : void 0;
+          }, o.prototype.set = function(c, l) {
             var x = a(
-              s,
+              c,
               /*create*/
               !0
             );
-            return x[this._key] = c, this;
-          }, o.prototype.delete = function(s) {
-            var c = a(
-              s,
+            return x[this._key] = l, this;
+          }, o.prototype.delete = function(c) {
+            var l = a(
+              c,
               /*create*/
               !1
             );
-            return c !== void 0 ? delete c[this._key] : !1;
+            return l !== void 0 ? delete l[this._key] : !1;
           }, o.prototype.clear = function() {
             this._key = r();
           }, o;
@@ -599,113 +599,113 @@ var ne;
       function r() {
         var o;
         do
-          o = "@@WeakMap@@" + u();
-        while (O.has(t, o));
+          o = "@@WeakMap@@" + s();
+        while (T.has(t, o));
         return t[o] = !0, o;
       }
-      function a(o, s) {
-        if (!h.call(o, n)) {
-          if (!s)
+      function a(o, c) {
+        if (!d.call(o, n)) {
+          if (!c)
             return;
-          Object.defineProperty(o, n, { value: O.create() });
+          Object.defineProperty(o, n, { value: T.create() });
         }
         return o[n];
       }
-      function M(o, s) {
-        for (var c = 0; c < s; ++c)
-          o[c] = Math.random() * 255 | 0;
+      function M(o, c) {
+        for (var l = 0; l < c; ++l)
+          o[l] = Math.random() * 255 | 0;
         return o;
       }
       function i(o) {
         return typeof Uint8Array == "function" ? typeof crypto < "u" ? crypto.getRandomValues(new Uint8Array(o)) : typeof msCrypto < "u" ? msCrypto.getRandomValues(new Uint8Array(o)) : M(new Uint8Array(o), o) : M(new Array(o), o);
       }
-      function u() {
+      function s() {
         var o = i(e);
         o[6] = o[6] & 79 | 64, o[8] = o[8] & 191 | 128;
-        for (var s = "", c = 0; c < e; ++c) {
-          var x = o[c];
-          (c === 4 || c === 6 || c === 8) && (s += "-"), x < 16 && (s += "0"), s += x.toString(16).toLowerCase();
+        for (var c = "", l = 0; l < e; ++l) {
+          var x = o[l];
+          (l === 4 || l === 6 || l === 8) && (c += "-"), x < 16 && (c += "0"), c += x.toString(16).toLowerCase();
         }
-        return s;
+        return c;
       }
     }
-    function B(e) {
+    function L(e) {
       return e.__ = void 0, delete e.__, e;
     }
   });
 })(ne || (ne = {}));
-const Ie = (l = "") => (f) => {
-  Reflect.defineMetadata("prefix", l, f), Reflect.hasMetadata("routes", f) || Reflect.defineMetadata("routes", [], f);
+const Ie = (u = "") => (f) => {
+  Reflect.defineMetadata("prefix", u, f), Reflect.hasMetadata("routes", f) || Reflect.defineMetadata("routes", [], f);
 };
-var C = /* @__PURE__ */ ((l) => (l.get = "get", l.post = "post", l.put = "put", l.delete = "delete", l))(C || {}), g = /* @__PURE__ */ ((l) => (l.param = "param", l.query = "query", l.req = "req", l.res = "res", l.body = "body", l))(g || {});
-const G = (l) => (f) => (h, d, w) => {
-  Reflect.hasMetadata("routes", h.constructor) || Reflect.defineMetadata("routes", [], h.constructor);
-  const y = Reflect.getMetadata("routes", h.constructor);
+var G = /* @__PURE__ */ ((u) => (u.get = "get", u.post = "post", u.put = "put", u.delete = "delete", u))(G || {}), g = /* @__PURE__ */ ((u) => (u.param = "param", u.query = "query", u.req = "req", u.res = "res", u.body = "body", u))(g || {});
+const D = (u) => (f) => (d, h, w) => {
+  Reflect.hasMetadata("routes", d.constructor) || Reflect.defineMetadata("routes", [], d.constructor);
+  const y = Reflect.getMetadata("routes", d.constructor);
   y.push({
-    method: l,
+    method: u,
     path: f,
-    handlerName: d
-  }), Reflect.defineMetadata("routes", y, h.constructor);
-  const p = Reflect.getMetadata(g.req, h[d]), b = Reflect.getMetadata(g.res, h[d]), m = Reflect.getMetadata(g.param, h[d]), O = Reflect.getMetadata(g.query, h[d]), A = Reflect.getMetadata(g.body, h[d]), q = w.value;
+    handlerName: h
+  }), Reflect.defineMetadata("routes", y, d.constructor);
+  const v = Reflect.getMetadata(g.req, d[h]), m = Reflect.getMetadata(g.res, d[h]), b = Reflect.getMetadata(g.param, d[h]), T = Reflect.getMetadata(g.query, d[h]), A = Reflect.getMetadata(g.body, d[h]), I = w.value;
   w.value = (...S) => {
-    const [I, D] = S, k = [...S];
-    if (p && (k[p.index] = I), b && (k[b.index] = D), m) {
-      const { key: R, index: E } = m;
-      k[E] = I.params[R];
+    const [j, U] = S, k = [...S];
+    if (v && (k[v.index] = j), m && (k[m.index] = U), b) {
+      const { key: O, index: R } = b;
+      k[R] = j.params[O];
     }
-    if (O) {
-      const { key: R, schema: E, index: F } = O;
-      k[F] = R ? E.parse(I.query[R]) : E.parse(I.query);
+    if (T) {
+      const { key: O, zod: R, index: F } = T;
+      k[F] = O ? R.parse(j.query[O]) : R.parse(j.query);
     }
     if (A) {
-      const { schema: R, index: E } = A;
-      k[E] = R.parse(I.body);
+      const { zod: O, index: R } = A;
+      k[R] = O.parse(j.body);
     }
-    return q.apply(void 0, k);
+    return I.apply(void 0, k);
   };
-}, Se = G(C.get), je = G(C.post), Pe = G(C.put), Ae = G(C.delete), V = (l) => (f) => (h, d, w) => {
-  const y = h[d], p = {
+}, je = D(G.get), Se = D(G.post), Pe = D(G.put), qe = D(G.delete), B = (u) => (f) => (d, h, w) => {
+  const y = d[h], v = {
     key: f == null ? void 0 : f.key,
-    schema: f == null ? void 0 : f.schema,
+    zod: f == null ? void 0 : f.zod,
     index: w
   };
-  Reflect.defineMetadata(l, p, y);
-}, re = (l) => (f, h, d) => {
-  const w = f[h];
-  Reflect.defineMetadata(l, { index: d }, w);
-}, qe = V(g.param), Ue = V(g.query), Ce = re(g.req), Ge = re(g.res), De = V(g.body), Re = ["User"], Fe = (l) => (f, h, d) => {
-  const w = d.value;
-  d.value = (...y) => {
-    const [, p] = y;
-    if (Re.some((m) => m === l))
-      return w.apply(void 0, y);
-    p.status(403).json({ error: "Forbidden" });
+  Reflect.defineMetadata(u, v, y);
+}, ae = (u) => (f, d, h) => {
+  const w = f[d];
+  Reflect.defineMetadata(u, { index: h }, w);
+}, Ce = B(g.param), Ge = B(g.query), De = ae(g.req), Ue = ae(g.res), Fe = B(g.body);
+var oe = /* @__PURE__ */ ((u) => (u.and = "and", u.or = "or", u))(oe || {});
+const re = ({ roles: u, operator: f }, d) => f === oe.and ? u.every((h) => d.includes(h)) : d.some((h) => u.includes(h)), We = (u) => (f, d, h) => {
+  const w = h.value;
+  h.value = (...y) => {
+    const [, v] = y, m = Array.isArray(u) ? u : [u], b = Reflect.getMetadata("use-role-class", f), T = Reflect.getMetadata("use-role-method", f.constructor), A = re(b, m), I = re(T, m);
+    return A ? I ? w.apply(void 0, y) : v.status(403).json({ error: "Forbidden" }) : v.status(403).json({ error: "Forbidden" });
   };
-}, Ee = require("express"), We = (l) => {
-  const f = Ee.Router();
-  return l.forEach((h) => {
-    const d = new h(), w = Reflect.getMetadata("prefix", h);
-    Reflect.getMetadata("routes", h).forEach((p) => {
-      f[p.method](`${w}${p.path}`, (b, m) => {
-        d[p.handlerName](b, m);
+}, xe = require("express"), ze = (u) => {
+  const f = xe.Router();
+  return u.forEach((d) => {
+    const h = new d(), w = Reflect.getMetadata("prefix", d);
+    Reflect.getMetadata("routes", d).forEach((v) => {
+      f[v.method](`${w}${v.path}`, (m, b) => {
+        h[v.handlerName](m, b);
       });
     });
   }), f;
 };
 export {
-  xe as AuthGuard,
-  De as Body,
+  Ae as AuthGuard,
+  Fe as Body,
   Ie as Controller,
-  Ae as Delete,
-  Se as Get,
-  C as Method,
-  qe as Param,
+  qe as Delete,
+  je as Get,
+  G as Method,
+  Ce as Param,
   g as Parameter,
-  je as Post,
+  Se as Post,
   Pe as Put,
-  Ue as Query,
-  Ce as Req,
-  Ge as Res,
-  Fe as RoleGuard,
-  We as getRouter
+  Ge as Query,
+  De as Req,
+  Ue as Res,
+  We as RoleGuard,
+  ze as getRouter
 };

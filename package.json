@@ -1,6 +1,6 @@
 {
   "name": "simple-node-decorators",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "repository": "https://github.com/skav3n/simple-node-decorators.git",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",

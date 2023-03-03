@@ -1,11 +1,11 @@
 export { AuthGuard } from './decorators/auth-guard.decorator';
 export { Controller } from './decorators/controller.decorator';
-export { UseRoleClass } from './decorators/use-roles-class.decorator';
-export { UseRoleMethod } from './decorators/use-roles-method.decorator';
+export { RequiredRoles } from './decorators/required-roles.decorator';
 export * from './decorators/http-method.decorator';
 export * from './decorators/parameter.decorator';
 export { RoleGuard } from './decorators/role-guard.decorator';
 export * from './types/method';
 export * from './types/parameter';
+export * from './types/role';
 export * from './types/route';
 export * from './router';

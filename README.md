@@ -36,7 +36,7 @@ import {
   Query,
   Body,
   RoleGuard,
-} from '@softwarehutpl/express-zod-decorators';
+} from 'simple-node-decorators';
 
 const ZodUser = z.object({
   id: z.string().optional(),
@@ -63,7 +63,10 @@ export default class UserController {
     return res.send(`user index`);
   }
 
-  @RoleGuard('User')
+  @RoleGuard({
+    userRoles: ['UserRole', 'Roles'],
+    requiredRoles: ['Required', 'Roles'],
+  })
   @Get('/:id')
   public getUser(
     @Req req: Request,
@@ -98,4 +101,5 @@ export default class UserController {
     return res.send(true);
   }
 }
+
 ```

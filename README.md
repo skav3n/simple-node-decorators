@@ -9,7 +9,7 @@ npm install simple-node-decorators --save
 ```typescript
 // index.ts
 import express from 'express';
-import { getRouter } from simple-node-decorators';
+import { getRouter } from 'simple-node-decorators';
 import UserController from './user.controller';
 import BookController from './book.controller';
 
